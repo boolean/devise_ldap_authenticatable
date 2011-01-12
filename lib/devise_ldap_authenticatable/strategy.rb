@@ -22,10 +22,6 @@ module Devise
 
       protected
 
-        def valid_controller?
-          params[:controller] == 'devise/sessions'
-        end
-
         def valid_params?
           params[scope] && params[scope][:password].present?
         end
@@ -34,3 +30,4 @@ module Devise
 end
 
 Warden::Strategies.add(:ldap_authenticatable, Devise::Strategies::LdapAuthenticatable)
+
